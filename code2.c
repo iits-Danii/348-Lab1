@@ -5,10 +5,10 @@ int main() {
     int temp;
     int target;
 
-    printf("What scale would you like to enter temperature in? (Fahrenheit, Celsius, Kelvin): ");
-    scanf("%s", &entered_scale);
+    printf("What scale would you like to enter temperature in? (1-Fahrenheit, 2-Celsius, 3-Kelvin): ");
+    scanf("%d", &entered_scale);
     printf("What is the temperature?: ");
-    scanf("%d" &temp);
-    printf("What unit of measurement would you like to convert to?: ");
-    scanf("%s", &target);
+    scanf("%d", &temp);
+    printf("What unit of measurement would you like to convert to? (1-Fahrenheit, 2-Celsius, 3-Kelvin): ");
+    scanf("%d", &target);
 }
