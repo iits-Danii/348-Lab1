@@ -60,7 +60,7 @@ int main() {
         } else if (entered_scale == 1 && target == 3) {
             converted_temp = fahrenheit_to_kelvin(temp);
         } else if (entered_scale == 2 && target == 1) {
-            converted_temp ==celsius_to_fahrenheit(temp);
+            converted_temp = celsius_to_fahrenheit(temp);
         } else if (entered_scale == 2 && target == 3) {
             converted_temp = celsius_to_kelvin(temp);
         } else if (entered_scale == 3 && target == 1) {
