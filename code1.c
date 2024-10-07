@@ -10,6 +10,7 @@ int main() {
         printf("Enter a score (must be a value greater than 1 or program will stop): ");
         scanf("%d", &total_score);
 
+        //break condition
         if (total_score <= 1) {
             break;
         }
@@ -20,6 +21,7 @@ int main() {
 }
 
 void find_combos(int total_score) {
+    //initialize variables
     int tdown;
     int fieldg;
     int safety;
@@ -28,6 +30,7 @@ void find_combos(int total_score) {
 
     printf("Possible combinations for score %d:\n", total_score);
 
+    //loops through possible counts of each way of scoring
     for (td2p = 0; td2p*8 <= total_score; td2p++) {
         for (td1p = 0; td1p*7 <= total_score; td1p++) {
             for (tdown = 0; tdown*6 <= total_score; tdown++) {
