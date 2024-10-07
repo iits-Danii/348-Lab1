@@ -1,8 +1,6 @@
 #include <stdio.h>
 
-//Current issues: organization (spacing things out)
-//reminders: { before else statements, variables must be declared in advance, keep referring to datatype stuff
-
+// function initializations//
 void retry();
 void categorize_temp(float temp);
 float celsius_to_fahrenheit(float temp);
@@ -12,14 +10,17 @@ float kelvin_to_celsius(float temp);
 float fahrenheit_to_kelvin(float temp);
 float kelvin_to_fahrenheit(float temp);
 
-
+//main function
 int main() {
+
+    //variable initializations//
     int entered_scale;
     float temp;
     int target;
     int restart;
     float  cat_temp;
 
+    //asks the users required values for program to function
     printf("What scale would you like to enter temperature in? (1-Fahrenheit, 2-Celsius, 3-Kelvin): \n");
     scanf("%d", &entered_scale);
     printf("What is the temperature?: \n");
@@ -27,12 +28,13 @@ int main() {
     printf("What unit of measurement would you like to convert to? (1-Fahrenheit, 2-Celsius, 3-Kelvin): \n");
     scanf("%d", &target);
     
+    //error checking//
     if ((entered_scale == 3 && temp < 0) || (entered_scale == target) || (entered_scale < 1 || entered_scale > 3) || (target < 1 || target > 3)) {
 
-       
         printf("Invalid input, would you like to try again? (1-Y, 0-N) \n");
         scanf("%d", &restart);
         
+        //'retry' restarts main//
         if (restart == 1) {
             retry();
         } else {
@@ -41,6 +43,7 @@ int main() {
         
     } else {
 
+        //gets celsius conversion to categorize temp//
         if (entered_scale == 1) {
             cat_temp = fahrenheit_to_celsius(temp);
             categorize_temp(cat_temp);
@@ -51,6 +54,7 @@ int main() {
 
         float converted_temp;
         
+        //acquires converted value based on scale and target//
         if (entered_scale == 1 && target == 2) {
             converted_temp = fahrenheit_to_celsius(temp);
         } else if (entered_scale == 1 && target == 3) {
