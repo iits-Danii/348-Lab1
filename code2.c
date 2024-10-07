@@ -3,7 +3,14 @@
 //Current issues: organization (spacing things out)
 //reminders: { before else statements, variables must be declared in advance, keep referring to datatype stuff
 
-void restart();
+void retry();
+float celsius_to_fahrenheit(float temp);
+float fahrenheit_to_celsius(float temp);
+float celsius_to_kelvin(float temp);
+float kelvin_to_celsius(float temp);
+float fahrenheit_to_kelvin(float temp):
+float kelvin_to_fahrenheit(float temp);
+
 
 int main() {
     int entered_scale;
@@ -25,13 +32,19 @@ int main() {
         
         if (restart == 1) {
             retry();
-          } else {
+        } else {
                 return 0;
-            }
+        }
         
+    } else {
+        float converted_temp;
+        if (entered_scale == 1 && target == 2) {
+            converted_temp = fahrenheit_to_celsius(temp);
+        } else if (entered_scale == 1 && target == 3) {
+            converted_temp == 
+        }
     }
 }
-
 
 float celsius_to_fahrenheit(float temp) {
     return (9.0/5.0)*temp + 32.0;
@@ -47,6 +60,14 @@ float celsius_to_kelvin(float temp) {
 
 float kelvin_to_celsius(float temp) {
     return temp - 273.15;
+}
+
+float fahrenheit_to_kelvin(float temp) {
+    return celsius_to_kelvin(fahrenheit_to_celsius(temp));
+}
+
+float kelvin_to_fahrenheit(float temp) {
+    return celsius_to_fahrenheit(kelvin_to_celsius(temp));
 }
 
 void retry() {
